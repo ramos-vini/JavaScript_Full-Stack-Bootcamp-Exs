@@ -1,0 +1,32 @@
+<!-- Crie um script que receba um array de qualquer tamanho e ordene seus elementos na ordem crescente.
+
+DICA: Use a função sort.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados</title>
+</head>
+
+<body>
+    <script>
+        let n1 = Number(prompt("Digite o 1º número."));
+        let n2 = Number(prompt("Digite o 2º número."));
+        let n3 = Number(prompt("Digite o 3º número."));
+
+        let numeros = [n1, n2, n3];
+
+        numeros.sort((a, b) => {
+            return a - b;
+        });
+
+        alert(`Os números digitados em ordem crescente são ${numeros}.`);
+    </script>
+</body>
+
+</html>
