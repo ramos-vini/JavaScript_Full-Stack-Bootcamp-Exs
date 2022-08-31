@@ -1,12 +1,47 @@
+<!-- Faça um programa que pergunte quanto a pessoa quer emprestado, faça o cálculo do empréstimo a juros  compostos.
+     Para fazer o empréstimo solicite:
+
+    – Quanto ela quer emprestado?
+
+   – Em quantos meses ela vai pagar?
+
+       *A Taxa de juros será de 2% ao mês.
+
+        Segue a fórmula dos Juros compostos:   M = C x (1+i)^t    ‌
+
+    M é o valor final após a aplicação dos juros
+
+    C o valor que a pessoa vai pegar emprestrado
+
+    i é a taxa de juros
+
+    t é o tempo
+
+    Ao final mostre quanto a pessoa pagará após a aplicação dos juros 
+
+DICA: Use Math.pow() para o cálculo de potência que está sendo simbolizado pelo acento circunflexo (^)
+ sabendo que ^t é o mesmo que Math.pow((1+i), t). Com uma dica dessa fica até fácil rsrs.
+-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cálculo de Empréstimo</title>
 </head>
+
 <body>
-    
+    <script>
+        let c = Number(prompt("Vamos realizar um empréstimo.\n\nQual valor você deseja receber emprestado?"));
+        let t = Number(prompt("Em quantos meses você pagará esse empréstimo?"));
+        let i = 0.02;
+        let m = c * Math.pow((1 + i), t);
+
+        alert(`Obrigado. Após ${t} meses, o valor a pagar será de R$ ${m.toFixed(2).replace(".", ",")}.`);
+    </script>
 </body>
+
 </html>
