@@ -1,0 +1,56 @@
+<!-- Elabore um algoritmo que calcule o que deve ser pago por um produto, considerando o preço
+normal de etiqueta e a escolha da condição de pagamento. 
+
+Utilize os códigos da tabela a seguir
+para ler qual acondição de pagamento escolhida e efetuar o cálculo adequado.
+
+Código Condição de pagamento
+1 - À vista em dinheiro ou cheque, recebe 10% de desconto;
+2 - À vista no cartão de crédito, recebe 15% de desconto;
+3 - Em duas vezes, preço normal de etiqueta sem juros;
+4 - Em duas vezes, preço normal de etiqueta mais juros de 10%;
+
+Crie uma variável para receber a entrada do valor do produto e uma para a forma de pagamento. 
+
+DICA: Use o comando prompt para permitir valores inseridos pelo usuário dinamicamente e o comando parseFloat e 
+parseInt para converter para número o que entrar pelo prompt quando for necessário.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional</title>
+</head>
+
+<body>
+    <script>
+        var preco = parseFloat(prompt("Digite o valor do produto."));
+        var condicao = prompt("Digite o número referente à forma de pagamento:\n\n1 - À vista em dinheiro ou cheque;\n2 - À vista no cartão de crédito;\n3 - Parcelado em 2x;\n4 - Parcelado a partir de 3x.");
+        switch (condicao) {
+            case "1":
+                alert(`Obrigado! O valor total a ser pago pelo produto é de R$ ${(preco * 0.9).toFixed(2).replace(".", ",")}.`);
+                break;
+
+            case "2":
+                alert(`Obrigado! O valor total a ser pago pelo produto é de R$ ${(preco * 0.85).toFixed(2).replace(".", ",")}.`);
+                break;
+
+            case "3":
+                alert(`Obrigado! O valor total a ser pago pelo produto é de R$ ${(preco).toFixed(2).replace(".", ",")}.`);
+                break;
+
+            case "4":
+                alert(`Obrigado! O valor total a ser pago pelo produto é de R$ ${(preco * 1.1).toFixed(2).replace(".", ",")}.`);
+                break;
+
+            default:
+                alert("Forma de pagamento não disponível.");
+                break;
+        }
+    </script>
+</body>
+
+</html>
