@@ -1,0 +1,44 @@
+<!-- O IMC – Indice de Massa Corporal é um critério da Organização Mundial de Saúde para dar
+uma indicação sobre a condição de peso de uma pessoa adulta. 
+
+A fórmula é IMC = peso / ( altura) 2
+
+Elabore um algoritmo que leia o peso e a altura de um adulto e mostre sua condição de acordo com a tabela abaixo. 
+
+IMC em adultos Condição
+Abaixo de 18,5 Abaixo do peso
+Entre 18,5 e 25 Peso normal
+Entre 25 e 30 Acima do peso
+Acima de 30 obeso
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional</title>
+</head>
+
+<body>
+    <script>
+        let peso = Number(prompt("Digite o seu Peso."));
+        let h = Number(prompt("Digite a sua altura em metros (Ex: 1,73).").replace(",", "."));
+        let imc = peso / (h * 2);
+
+        if (imc < 18.5) {
+            alert(`Obrigado! Segundo a OMS, você está abaixo do peso normal.`);
+        } else if (imc < 25) {
+            alert(`Obrigado! Segundo a OMS, você está dentro do peso normal.`);
+        } else if (imc < 30) {
+            alert(`Obrigado! Segundo a OMS, você está acima do peso normal.`);
+        } else {
+            alert(`Obrigado! Segundo a OMS, você está obeso.`);
+        }
+    </script>
+</body>
+
+</html>
