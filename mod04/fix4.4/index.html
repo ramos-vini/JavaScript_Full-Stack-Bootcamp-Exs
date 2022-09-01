@@ -1,0 +1,54 @@
+<!-- Faça um script que receba a idade de 15 pessoas e que calcule e mostre:
+a) A quantidade de pessoas em cada faixa etária;
+b) A percentagem de pessoas na primeira e na última faixa etária, com relação ao total de pessoas: 
+
+Até 15 anos
+De 16 a 30 anos
+De 31 a 45 anos
+De 46 a 60 anos
+Acima de 61 anos
+
+DICA: Use o Array Filter para filtrar, pegue a variável de retorno do filter e use nela o .length.
+ Você precisará fazer 5 filters um para cada faixa etária então haverá 5 variáveis recebendo filter
+ do mesmo array de idades, porém cada filter usa uma condicional específica de faixa etária. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laços</title>
+</head>
+
+<body>
+    <script>
+        let idades = [];
+        for (let i = 1; i <= 15; i++) {
+            let idade = parseInt(prompt(`Digite a idade da ${i}ª pessoa (${i}/15).`));
+            idades.push(idade);
+        }
+
+        let faixasIdade = [];
+        for (let i = 15; i <= 60; i += 15) {
+            faixasIdade.push(idades.filter((value, index, array) => {
+                return value <= i && value > (i - 15);
+            }))
+        }
+
+        faixasIdade.push(idades.filter((value, index, array) => {
+            return value >= 61;
+        }))
+
+        console.log(`
+        Até 15 anos: ${faixasIdade[0].length} pessoas (${(faixasIdade[0].length * 100 / 15).toFixed(0)}%);
+        De 16 a 30 anos: ${faixasIdade[1].length} pessoas;
+        De 31 a 45 anos: ${faixasIdade[2].length} pessoas;
+        De 46 a 60 anos: ${faixasIdade[3].length} pessoas;
+        Acima de 61 anos: ${faixasIdade[4].length} pessoas (${(faixasIdade[4].length * 100 / 15).toFixed(0)}%).
+        `)
+    </script>
+</body>
+
+</html>
