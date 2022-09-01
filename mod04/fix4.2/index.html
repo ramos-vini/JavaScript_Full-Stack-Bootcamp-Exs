@@ -1,0 +1,29 @@
+<!-- Faça um script que mostre as tabuadas dos números de 1 a 10 usando laços de repetição. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laços</title>
+</head>
+
+<body>
+    <script>
+        let stringTabuadas = "";
+
+        for (let i = 1; i <= 10; i++) {
+            let tabuada = `\nTabuada do número ${i}:\n`;
+            for (let j = 0; j <= 10; j++) {
+                tabuada += `${i} x ${j} = ${i * j}\n`
+            }
+            stringTabuadas += tabuada;
+        }
+
+        console.log(stringTabuadas);
+    </script>
+</body>
+
+</html>
