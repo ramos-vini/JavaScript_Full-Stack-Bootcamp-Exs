@@ -1,0 +1,49 @@
+<!-- Escreva um script que receba inteiro e mostra os números pares e ímpares (separados), de 1 até esse inteiro. 
+
+DICA: Use o operador módulo para te auxiliar aqui. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laços</title>
+</head>
+
+<body>
+    <script>
+        let n = parseInt(prompt("Digite um número inteiro."));
+
+        let listaPares = [];
+        let listaImpares = [];
+
+        if (n > 0) {
+            for (let i = 1; i <= n; i++) {
+                if (i % 2 == 0) {
+                    listaPares.push(i);
+                } else {
+                    listaImpares.push(i);
+                }
+            }
+        } else {
+            for (let i = 1; i >= n; i--) {
+                if (i % 2 == 0) {
+                    listaPares.push(i);
+                } else {
+                    listaImpares.push(i);
+                }
+            }
+        }
+
+        alert(`
+        Números inteiros Pares de 1 a ${n}:
+        ${n == 1 ? "Não há" : listaPares.join(", ")}.\n
+        Números inteiros Ímpares de 1 a ${n}:
+        ${listaImpares.join(", ")}.
+        `);
+    </script>
+</body>
+
+</html>
