@@ -1,0 +1,41 @@
+<!-- Crie um jogo onde o usuário deverá digitar um valor no prompt para advinhar qual o número escondido.
+  Utilize funções para deixar seu código mais organizado. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo número escondido</title>
+</head>
+
+<body>
+    <script>
+        while (true) {
+            function gerarNumeroRandom() {
+                return Math.floor(Math.random() * 10 + 1);
+            }
+
+            let nRandom = gerarNumeroRandom();
+            console.log(nRandom);
+
+            let nDigitado;
+            do {
+                nDigitado = parseInt(prompt("Tente achar o número escondido!\nDigite um número de 1 a 10."));
+                if (isNaN(nDigitado) || nDigitado < 1 || nDigitado > 10) {
+                    alert("Inválido. Digite um número inteiro de 1 a 10.");
+                }
+            } while (isNaN(nDigitado) || nDigitado < 1 || nDigitado > 10)
+
+            if (nDigitado == nRandom) {
+                alert(`Parabéns! Você acertou o número escondido (${nRandom}).`);
+            } else {
+                alert(`Não foi dessa vez... O número sorteado era ${nRandom}.\nTente novamente!`);
+            }
+        }
+    </script>
+</body>
+
+</html>
