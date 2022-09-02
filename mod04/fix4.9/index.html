@@ -1,0 +1,111 @@
+<!--
+  Utilizando orientação a objetos crie uma classe chamada Produto e uma classe chamada Carrinho.
+
+  O programa basicamente deverá adicionar x produtos no carrinho (Use laços de repetição para isso).
+  As informações que devem ser solicitadas para cada produto são o código de barras para que seja
+  possível identificar qual é o produto e a quantidade que será adicionada ao carrinho.
+  Com essas informações o programa deverá exibir o extrado com o descritivo dos produtos e o valor total da compra.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+</head>
+
+<body>
+    <h1>Mercadinho</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="3">Itens Disponíveis</td>
+            </tr>
+            <tr>
+                <td><b>Produto</b></td>
+                <td><b>Código de Barras</b></td>
+                <td><b>Preço</b></td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Ovo</td>
+                <td>1234567890</td>
+                <td>R$ 5,00</td>
+            </tr>
+            <tr>
+                <td>Leite</td>
+                <td>1234509876</td>
+                <td>R$ 6,00</td>
+            </tr>
+            <tr>
+                <td>Mandioca</td>
+                <td>0987654321</td>
+                <td>R$ 7,00</td>
+            </tr>
+            <tr>
+                <td>Espinafre</td>
+                <td>0987612345</td>
+                <td>R$ 8,00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Código de Barras: <input type="number" name="" id="inCodigo">
+    </p>
+
+    <p>
+        Quantidade: <input type="number" name="" id="inQuantidade">
+    </p>
+
+    <input type="button" value="Adicionar ao Carrinho">
+
+    <h3 id="outCarrinho"></h3>
+
+    <p id="outLista"></p>
+
+    <script>
+        class Produto {
+            constructor(nome, codigo, preco){
+                this.nome = nome;
+                this.codigo = codigo;
+                this.preco = preco;
+            }
+        }
+
+        let produtos = [];
+
+        let produto1 = new Produto("Ovo", "1234567890", 5.0);
+        produtos.push(produto1);
+
+        let produto2 = new Produto("Leite", "1234509876", 6.0);
+        produtos.push(produto2);
+
+        let produto3 = new Produto("Mandioca", "0987654321", 7.0);
+        produtos.push(produto3);
+
+        let produto4 = new Produto("Espinafre", "0987612345", 8.0);
+        produtos.push(produto4);
+
+        // TODO Criar um objeto da classe Carrinho e adicionar objetos da classe Produto
+        //  nela por meio de verificação do código de barras inserido no input
+
+        // class Carrinho {
+        //     constructor(produtos, valorTotal){
+                
+        //     }
+
+        //     produtos = [];
+
+        //     valorTotal = 0;
+        // }
+    </script>
+</body>
+
+</html>
